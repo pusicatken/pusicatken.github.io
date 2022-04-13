@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Year 2 Semester 2</title>
+<link rel="icon" type="image/x-icon" href="./images/zoom_logo_icon_147196.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif; background-color: #f1f1f1;}
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style the tab */
+.tab {
+  position: fixed;
+  right: 0;
+  border: none;
+  background-color: #333;
+  width: 15%;
+  height: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: #333;
+  color: #f2f2f2;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  overflow: auto;
+  white-space: nowrap;
+  float: left;
+  padding: 0px 12px;
+  border: none;
+  width: 85%;
+  border-left: none;
+  height: 100%;
+  background-color: #333;
+  color: #f2f2f2;
+}
+
+<!--.dropbtn {
+  background-color: #333;
+  color: #f2f2f2;
+  padding: 22px 16px;
+  font-size: 17px;
+  border: none;
+}-->
+
+.dropdown {
+  position: relative;
+  display: inline;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+<!--
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+-->
+
+.dropdown-content a:hover {background-color: #ddd;  color: black;}
+
+.dropdown:hover .dropbtn {background-color: #ddd;color: black;}
+
+<!--.dropdown:active .dropbtn {background-color: #04AA6D; color: white;}-->
+
+a:link {
+  color: #f2f2f2;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #f2f2f2;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gold;
+  font-weight: bold;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:active {
+  color: #f2f2f2;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body onload="startTime()">
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+  <!--<div class="dropdown">
+	<button class="dropbtn">Timetable</button>
+	<div class="dropdown-content">-->
+		<button class="tablinks" onclick="openCity(event, 'Timetable')">Timetable</button>
+		<!--<button class="tablinks" onclick="openCity(event, '15')">Outlook Calender</button>
+	</div>
+  </div>-->
+  <div class="dropdown">
+	<button class="dropbtn">Course</button>
+	<div class="dropdown-content">
+	  <button class="tablinks" onclick="openCity(event, '1')">CSCI 4130</button>
+	  <button class="tablinks" onclick="openCity(event, '2')">ENGG 2780A</button>
+	  <button class="tablinks" onclick="openCity(event, '3')">CSCI 3320</button>
+	  <button class="tablinks" onclick="openCity(event, '4')">SEEM 3510</button>
+	  <button class="tablinks" onclick="openCity(event, '5')">CSCI 3170</button>
+	  <button class="tablinks" onclick="openCity(event, '6')">CENG 4999</button>
+	</div>
+  </div>
+  <button class="tablinks" onclick="openCity(event, '7')">Links</button>
+  <div class="dropdown">
+	<button class="dropbtn">Relax</button>
+	<div class="dropdown-content">
+		<button class="tablinks" onclick="openCity(event, '11')">Music</button>
+		<!--<button class="tablinks" onclick="openCity(event, '13')">Stand-up Talk</button>-->
+		<button class="tablinks" onclick="openCity(event, '10')">夜的命名術</button>
+	</div>
+  </div>
+  <div class="dropdown">
+	<button class="dropbtn">Widgets</button>
+	<div class="dropdown-content">
+		<button class="tablinks" onclick="openCity(event, '14')">Currency</button>
+		<button class="tablinks" onclick="openCity(event, '12')">Countdown</button>
+		<button class="tablinks" onclick="openCity(event, '9')">Calculators</button>
+		<button class="tablinks" onclick="openCity(event, '8')">Weather</button>
+		<button class="tablinks" onclick="openCity(event, '15')">Calender</button>
+		<button class="tablinks" onclick="openCity(event, '11')">Music</button>
+	</div>
+  </div>
+  <!--<p style="color:white;font-size:80%;text-align:right;padding-left: 10px;padding-right: 10px;padding-bottom: 5px;">CUHK 2021-2022<br>Year 4 Semester 2<br>Computer Engineering</p>-->
+</div>
+
+<div id="Home" class="tabcontent">
+  
+	<script>
+		function startTime() {
+		  const today = new Date();
+		  var date = today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear();
+		  let h = today.getHours();
+		  let m = today.getMinutes();
+		  let s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  var ampm = h >= 12 ? 'pm' : 'am';
+		  h = h % 12;
+		  h = h ? h : 12; // the hour '0' should be '12'
+		  document.getElementById('date').innerHTML =  "Today is "+ date + ".";
+		  document.getElementById('time').innerHTML =  "Time now is " + h + ":" + m + ":" + s + " " + ampm + ".";
+		  setTimeout(startTime, 1000);
+		}
+
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+	</script>
+  <table align="left" cellpadding="10">
+  <tr>
+  <td></td>
+  <td>
+  
+  <h2><div id="date"></div></h2>
+  <canvas id="canvas" width="300" height="300"
+	style="background-color:#333">
+  </canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, 'silver');
+  grad.addColorStop(0.5, 'lightgrey');
+  grad.addColorStop(1, 'silver');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#f2f2f2';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+  
+  <h2><div id="time"></div>
+	</h2>
+	
+  </td><td></td><td></td>
+  <td style="vertical-align:top; align:center">
+  <div style="overflow-y:auto;height:535px;width:535px">
+  <h3 align=center>Assignment List</h3>
+<table border="1" cellpadding="5px" align="center">
+<thead>
+<tr>
+<th></th>
+<th>Date</th>
+<th>Subject</th>
+<th>Assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td align="center">16/4</td>
+<td align="center">Machine Learning</td>
+<td align="center">HW5</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">17/4</td>
+<td align="center">Database</td>
+<td align="center">Project</td>
+</tr>
+<tr>
+<td  align="center"></td>
+<td  align="center">20/4</td>
+<td  align="center">FYP</td>
+<td align="center">report (before 13:00)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">21/4</td>
+<td align="center">HCI</td>
+<td align="center">HW4 (before 5:00pm)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">23/4</td>
+<td align="center">Cyber Security</td>
+<td align="center">HW4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">25/4</td>
+<td align="center">FYP</td>
+<td align="center">present (10:00am)</td>
+</tr>
+<tr>
+<td align="center">Exam</td>
+<td align="center">27/4</td>
+<td align="center">Stat</td>
+<td align="center">Final Exam</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">27/4</td>
+<td align="center">Database</td>
+<td align="center">HW3</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">29/4</td>
+<td align="center">FYP</td>
+<td align="center">ppt</td>
+</tr>
+<tr>
+<td align="center">Exam</td>
+<td align="center">03/5</td>
+<td align="center">HCI</td>
+<td align="center">Final Exam</td>
+</tr>
+<tr>
+<td align="center">Exam</td>
+<td align="center">04/5</td>
+<td align="center">Machine Learning</td>
+<td align="center">Final Exam</td>
+</tr>
+<tr>
+<td align="center">Exam</td>
+<td align="center">06/5</td>
+<td align="center">Cyber Security</td>
+<td align="center">Final Exam</td>
+</tr>
+<tr>
+<td align="center">Exam</td>
+<td align="center">06/5</td>
+<td align="center">Datebase</td>
+<td align="center">Take Home Exam</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">23/5</td>
+<td align="center">FYP</td>
+<td align="center">final report</td>
+</tr>
+</tbody>
+</table></div>
+  </td>
+  <!--<h3>Reminder</h3>
+  <p>
+  <br>[Flourishing First Year @ CUHK]  😴 ‘Good Night, Sleep Tight’ Online Seminar 💤 <br>
+
+Date: 12 April 2022 (Tue) <br>
+Time: 3:30pm - 4:30pm <br>
+
+Language: English <br>
+
+*Please <a href="https://cuhk.zoom.us/j/91455340279?pwd=Y3ZVbXg3ZG12TWhjbEswMjZzMjJqUT09">log in</a> 5-10 mins earlier with your *FULL ENGLISH​* name for attendance taking.</p>-->
+  <!--<p>3/3:<br>2:00-5:30pm <a href="https://global.gotowebinar.com/join/4552123695051110158/405480241">AWS Machine Learning Web Day</a></p>
+  </td>-->
+  <!--<td style="vertical-align:top; align:center">
+  </td>-->
+  </tr>
+  </table>
+  <br>
+  
+	<!--
+  Song: 再不再見
+  <br>
+  <audio controls id="song">
+	  <source src="./music/再不再見.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+  </audio>
+  <br>
+	<button onclick="enableLoop()" type="button">Enable loop</button>
+	<button onclick="disableLoop()" type="button">Disable loop</button>
+	Status: <span id ="status" style="width: 100px;height: 100px;padding: 5px;"></span>
+
+  <script>
+	var x = document.getElementById("song");
+	x.volume = 0.05;
+	var t = x.currentTime;
+	function enableLoop() { 
+	  x.loop = true;
+	  document.getElementById("status").innerHTML = "Looping";
+	} 
+
+	function disableLoop() { 
+	  x.loop = false;
+	  document.getElementById("status").innerHTML = "Loop disabled";
+	}
+	</script>-->
+	
+</div>
+
+<div id="Timetable" class="tabcontent">
+	
+	<table border="5" cellspacing="0" align="center">
+		<!--<caption>Timetable</caption>-->
+		<tr>
+			<td align="center" height="50"
+				width="100">
+				<b>Period/Day</b>
+			</td>
+			<td align="center" height="50"
+				width="100">
+				<b>Monday</b>
+			</td>
+			<td align="center" height="50"
+				width="100">
+				<b>Tuesday</b>
+			</td>
+			<td align="center" height="50"
+				width="100">
+				<b>Wednesday</b>
+			</td>
+			<td align="center" height="50"
+				width="100">
+				<b>Thursday</b>
+			</td>
+			<td align="center" height="50"
+				width="100">
+				<b>Friday</b>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="center" height="50">
+				<b>8:30-9:15</b></td>
+			<td align="center" height="50"></td>
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/94440449267?pwd=WTNJMzZ2REdZaGE5T3FpVFg0azdTQT09" target="_blank">ML</a></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/94440449267?pwd=WTNJMzZ2REdZaGE5T3FpVFg0azdTQT09" target="_blank">ML</a></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<!--
+			<td rowspan="6" align="center" height="50">
+				<h2>L<br>U<br>N<br>C<br>H</h2>
+			</td>
+			<td colspan="3" align="center"
+				height="50">LAB</td>
+			<td align="center" height="50">Phy</td>-->
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>9:30-10:15</b>
+			</td>
+			<!--<td colspan="3" align="center"
+				height="50">LAB
+			</td>-->
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/95475730516?pwd=emRLUWltM3dDRWd6andvS1V5Znk5QT09" target="_blank">Security</a></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/92866167981?pwd=SklkM2E3WmVvdGdGUUdMV1lsL1kydz09" target="_blank">ML</a><br>(Tutorial)</td>
+			<td align="center" height="50"></td>
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/97355564889?pwd=dSsxNkF1Z0VoRkx0dnMxR1R5N3lLUT09" target="_blank">HCI</a></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>10:30-11:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/91588543979?pwd=bVQ2SVFUOXd3SVBOajVkV2NiWmZMQT09" target="_blank">Database</a></td>
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/91588543979?pwd=bVQ2SVFUOXd3SVBOajVkV2NiWmZMQT09" target="_blank">Database</a></td>
+			<!--
+			<td colspan="3" align="center"
+				height="50">LIBRARY
+			</td>-->
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>11:30-12:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td rowspan="2" align="center" height="50">Assembly</td>
+			<!--<td colspan="3" align="center"
+				height="50">LAB
+			</td>
+			<td align="center" height="50">Mat</td>-->
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>12:30-1:15</b>
+			</td>
+			<!--
+			<td colspan="3" align="center"
+				height="50">LAB
+			</td>-->
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/91076369814" target="_blank">Statistics</a></td>
+			<td align="center" height="50"></td>
+			<td rowspan="2" align="center" height="50"><a href="https://cuhk.zoom.us/j/95210050915" target="_blank">Statistics</a><br>(Tutorial)</td>
+			<td align="center" height="50"></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>1:30-2:15</b>
+			</td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/97355564889?pwd=dSsxNkF1Z0VoRkx0dnMxR1R5N3lLUT09" target="_blank">HCI</a></td>
+			<!--<td colspan="3" align="center"
+				height="50">SEMINAR
+			</td>-->
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>2:30-3:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/99937675961?pwd=WXdEWWtWbE1FaTBhTElPQk1EelZJZz09" target="_blank">HCI</a> (Tutorial)<br>／<a href="https://cuhk.zoom.us/j/95475730516?pwd=emRLUWltM3dDRWd6andvS1V5Znk5QT09" target="_blank">Security</a></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/92964712810?pwd=bHlTRkVJTi9DK0pIU2xPZHZjZUYyQT09" target="_blank">Database</a><br>(Tutorial)</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>3:30-4:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>4:30-5:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+		</tr>
+		<tr>
+			<td align="center" height="50">
+				<b>5:30-6:15</b>
+			</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"><a href="https://cuhk.zoom.us/j/95475730516?pwd=emRLUWltM3dDRWd6andvS1V5Znk5QT09" target="_blank">Security</a><br>(Tutorial)</td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+			<td align="center" height="50"></td>
+		</tr>
+	</table>
+</div>
+
+<div id="1" class="tabcontent">
+  <h2>CSCI4130 Introduction to Cyber Security</h2>
+	<p></p>
+	<p><a onclick="hideNshow1()">Lecture & Tutorial</a></p>
+	<div id="hiddenelement1" style="display:none">
+		<p><a href="https://cuhk.zoom.us/j/95475730516?pwd=emRLUWltM3dDRWd6andvS1V5Znk5QT09" target="_blank">Join meeting</a></p>
+		<p>Meeting ID: <input type="text" value="954 7573 0516" id="I1A"> <button onclick="fA()">Copy</button></p>	
+		<p>Passcode: <input type="text" value="721473" id="I1B"> <button onclick="fB()">Copy</button></p>
+	</div>
+	
+	<script>
+	function hideNshow1(){
+	  var x = document.getElementById("hiddenelement1");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	
+	function fA() {
+	  var copyText = document.getElementById("I1A");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function fB() {
+	  var copyText = document.getElementById("I1B");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	
+	<h3>Useful Links</h3>
+	<p><a href="https://piazza.com/class/ky2ng0i2gky2ht" target="_blank">Piazza</a></p>
+	<p><a href="https://blackboard.cuhk.edu.hk/ultra/courses/_154018_1/cl/outline" target="_blank">Blackboard</a></p>
+	<p><a href="http://course.cse.cuhk.edu.hk/~csci4130/" target="_blank">Course Webpage</a> (need CUHK VPN)</p>
+	
+</div>
+
+<div id="2" class="tabcontent">
+
+  <h2>ENGG2780A  Statistics for Engineers</h2>
+  <p><a href="https://cuhk.zoom.us/j/91076369814" target="_blank">Lecture</a></p>
+  <p><a href="https://cuhk.zoom.us/j/95210050915" target="_blank">Tutorial</a> (Session 4)</p>
+  <h3>Useful Links</h3>
+  <div><a href="https://www.cse.cuhk.edu.hk/~andrejb/engg2780/" target="_blank">Course Webpage</a> <a id="hidetext" onclick="hideNshow8()">(Open here)</a>
+	<div id="hiddenelement8" style="display:none">
+   <iframe src="https://www.cse.cuhk.edu.hk/~andrejb/engg2780/" width=62% height=535 title="ENGG2780A Course Webpage"></iframe> 
+  </div></div>
+  <p><a href="https://piazza.com/class/ky346nm311q4sg" target="_blank">Piazza</a></p>
+  <p><a href="https://blackboard.cuhk.edu.hk/ultra/courses/_154650_1/cl/outline" target="_blank">Blackboard</a></p> 
+  <script>
+  function hideNshow8(){
+	  var x = document.getElementById("hiddenelement8");
+	  var y = document.getElementById("hidetext");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+		y.innerHTML = '(Hide)';
+		y.scrollIntoView();
+	  } else {
+		x.style.display = "none";
+		y.innerHTML = '(Open here)';
+	  }
+	}
+  </script>
+</div> 
+ 
+<div id="3" class="tabcontent">
+  <h2>CSCI3320 Fundamentals of Machine Learning</h2>
+  <p><a onclick="hideNshow2()">Lecture</a></p>
+	<div id="hiddenelement2" style="display:none">
+  <p><a href="https://cuhk.zoom.us/j/94440449267?pwd=WTNJMzZ2REdZaGE5T3FpVFg0azdTQT09" target="_blank">Join meeting</a></p>
+	<p>Meeting ID: <input type="text" value="944 4044 9267" id="myInputa"> <button onclick="myFunctiona()">Copy</button></p>
+	<p>Passcode: <input type="text" value="116040" id="myInputb"> <button onclick="myFunctionb()">Copy</button></p></div>
+	
+		
+	<script>
+	function hideNshow2(){
+	  var x = document.getElementById("hiddenelement2");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	
+	function myFunctiona() {
+	  var copyText = document.getElementById("myInputa");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function myFunctionb() {
+	  var copyText = document.getElementById("myInputb");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	
+  <p><a onclick="hideNshow3()">Tutorial</a></p>
+	<div id="hiddenelement3" style="display:none">
+	<p><a href="https://cuhk.zoom.us/j/92866167981?pwd=SklkM2E3WmVvdGdGUUdMV1lsL1kydz09" target="_blank">Join meeting</a></p>
+	<p>Meeting ID: <input type="text" value="928 6616 7981" id="myInputc"> <button onclick="myFunctionc()">Copy</button></p>
+	<p>Passcode: <input type="text" value="474639" id="myInputd"> <button onclick="myFunctiond()">Copy</button></p></div>
+	
+		
+	<script>
+	function hideNshow3(){
+	  var x = document.getElementById("hiddenelement3");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	function myFunctionc() {
+	  var copyText = document.getElementById("myInputc");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function myFunctiond() {
+	  var copyText = document.getElementById("myInputd");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	
+	<h3>Useful Links</h3>
+	<p><a href="https://blackboard.cuhk.edu.hk/ultra/courses/_154016_1/cl/outline" target="_blank">Blackboard</a></p>
+	<p><a href="https://lavi-lab.github.io/csci3320/" target="_blank">Course Webpage</a></p>
+	
+</div>
+
+<div id="4" class="tabcontent">
+  <h2>SEEM3510 Human-Computer Interaction</h2>
+  <p><a onclick="hideNshow4()">Lecture</a></p>
+	<div id="hiddenelement4" style="display:none">
+  <p><a href="https://cuhk.zoom.us/j/97355564889?pwd=dSsxNkF1Z0VoRkx0dnMxR1R5N3lLUT09" target="_blank">Join meeting</a></p>	
+	<p>Meeting ID: <input type="text" value="973 5556 4889" id="myInput1"> <button onclick="myFunction1()">Copy</button></p></div>
+  <p><a onclick="hideNshow5()">Tutorial</a></p>
+	<div id="hiddenelement5" style="display:none">
+	<p><a href="https://cuhk.zoom.us/j/99937675961?pwd=WXdEWWtWbE1FaTBhTElPQk1EelZJZz09" target="_blank">Join meeting</a></p>	
+	<p>Meeting ID: <input type="text" value="999 3767 5961" id="myInput2"> <button onclick="myFunction2()">Copy</button></p></div>
+		
+	<script>
+	function myFunction1() {
+	  var copyText = document.getElementById("myInput1");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function myFunction2() {
+	  var copyText = document.getElementById("myInput2");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	function hideNshow4(){
+	  var x = document.getElementById("hiddenelement4");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	function hideNshow5(){
+	  var x = document.getElementById("hiddenelement5");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	</script>
+	
+	<h3>Useful Links</h3>
+	<p><a href="https://blackboard.cuhk.edu.hk/ultra/courses/_155994_1/cl/outline" target="_blank">Blackboard</a></p>
+
+</div>
+
+<div id="5" class="tabcontent">
+  <h2>CSCI3170 Introduction to Database Systems</h2>
+  <p><a onclick="hideNshow6()">Lecture</a></p>
+	<div id="hiddenelement6" style="display:none">
+  <p><a href="https://cuhk.zoom.us/j/91588543979?pwd=bVQ2SVFUOXd3SVBOajVkV2NiWmZMQT09" target="_blank">Join meeting</a></p>
+	<p>Meeting ID: <input type="text" value="915 8854 3979" id="myInput3"> <button onclick="myFunction3()">Copy</button></p>
+	<p>Passcode: <input type="text" value="3170sp22" id="myInput4"> <button onclick="myFunction4()">Copy</button></p></div>
+  <p><a onclick="hideNshow7()">Tutorial</a></p>
+	<div id="hiddenelement7" style="display:none">
+	<p><a href="https://cuhk.zoom.us/j/92964712810?pwd=bHlTRkVJTi9DK0pIU2xPZHZjZUYyQT09" target="_blank">Join meeting</a></p>
+	<p>Meeting ID: <input type="text" value="929 6471 2810" id="myInpute"> <button onclick="myFunctione()">Copy</button></p>
+	<p>Passcode: <input type="text" value="22sp3170" id="myInputf"> <button onclick="myFunctionf()">Copy</button></p></div>
+		
+	<script>
+	function myFunction3() {
+	  var copyText = document.getElementById("myInput3");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function myFunction4() {
+	  var copyText = document.getElementById("myInput4");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	function hideNshow6(){
+	  var x = document.getElementById("hiddenelement6");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	</script>
+
+
+	<script>
+	function myFunctione() {
+	  var copyText = document.getElementById("myInpute");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	</script>
+	<script>
+	function myFunctionf() {
+	  var copyText = document.getElementById("myInputf");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999)
+	  document.execCommand("copy");
+	}
+	function hideNshow7(){
+	  var x = document.getElementById("hiddenelement7");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	</script>
+	
+	<h3>Useful Links</h3>
+	<p><a href="https://blackboard.cuhk.edu.hk/ultra/courses/_154009_1/cl/outline" target="_blank">Blackboard</a></p>
+</div>
+
+<div id="6" class="tabcontent">
+  <h3>CENG4999 Final Year Project II</h3>
+</div>
+
+<div id="7" class="tabcontent">
+  <h2>Useful Links</h2>
+  <p><a href="https://blackboard.cuhk.edu.hk/ultra/" target="_blank">Blackboard</a></p>
+  <p><a href="https://cusis.cuhk.edu.hk/" target="_blank">CUSIS</a></p>
+  <p><a href="http://i.cse.cuhk.edu.hk/" target="_blank">CSE intranet</a> (need CSE VPN)</p>
+  <hr>
+  <h2>Quick Links</h2>
+  <p></p>
+  
+</div>
+
+<div id="8" class="tabcontent">
+  <h2>Weather</h2>
+  <p style="width:699px;">
+<a class="weatherwidget-io" href="https://forecast7.com/zh-tw/22d40114d11/hong-kong/" data-label_1="HONG KONG" data-label_2="WEATHER" data-font="微軟正黑體 (Microsoft JhengHei)" data-theme="original" >HONG KONG WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+</p>
+</div>
+
+<div id="9" class="tabcontent">
+  <h2>Calculators</h2>
+  <style>
+  #simplecal
+	input[type="button"]
+	{
+		background-color:#333;
+		color: #f2f2f2;
+		border: solid #f2f2f2 2px;
+		width:100%
+	}
+
+  #simplecal
+	input[type="text"]
+	{
+		background-color:#333;
+		color: #f2f2f2;
+		border: solid #f2f2f2 2px;
+		width:100%
+	}
+  </style>
+  
+  <div id="simplecal">
+  <h3>Simple Calculator</h3>
+  
+  <script>
+		//function that display value
+		function dis(val)
+		{
+			document.getElementById("result").value+=val
+		}
+		
+		//function that evaluates the digit and return result
+		function solve()
+		{
+			let x = document.getElementById("result").value
+			let y = eval(x)
+			document.getElementById("result").value = y
+		}
+		
+		//function that clear the display
+		function clr()
+		{
+			document.getElementById("result").value = ""
+		}
+  </script>
+	<table border="2">
+		<tr>
+			<td colspan="3"><input type="text" id="result"/></td>
+			<script>
+				var input = document.getElementById("result");
+				input.addEventListener("keyup", function(event) {
+				  if (event.keyCode === 67) {
+				   event.preventDefault();
+				   clr();
+				  }
+				});
+			</script>
+			<!-- clr() function will call clr to clear all value -->
+			<td><input type="button" value="c" onclick="clr()"/> </td>
+		</tr>
+		<tr>
+			<!-- create button and assign value to each button -->
+			<!-- dis("1") will call function dis to display value -->
+			<td><input type="button" value="1" onclick="dis('1')"/> </td>
+			<td><input type="button" value="2" onclick="dis('2')"/> </td>
+			<td><input type="button" value="3" onclick="dis('3')"/> </td>
+			<td><input type="button" value="/" onclick="dis('/')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="dis('4')"/> </td>
+			<td><input type="button" value="5" onclick="dis('5')"/> </td>
+			<td><input type="button" value="6" onclick="dis('6')"/> </td>
+			<td><input type="button" value="-" onclick="dis('-')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="dis('7')"/> </td>
+			<td><input type="button" value="8" onclick="dis('8')"/> </td>
+			<td><input type="button" value="9" onclick="dis('9')"/> </td>
+			<td><input type="button" value="+" onclick="dis('+')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="." onclick="dis('.')"/> </td>
+			<td><input type="button" value="0" onclick="dis('0')"/> </td>
+			<!-- solve function call function solve to evaluate value -->
+			<td><input type="button" value="=" onclick="solve()"/> </td>
+			<script>
+				var input = document.getElementById("result");
+				input.addEventListener("keyup", function(event) {
+				  if (event.keyCode === 13) {
+				   event.preventDefault();
+				   solve();
+				  }
+				});
+			</script>
+			<td><input type="button" value="*" onclick="dis('*')"/> </td>
+		</tr>
+	</table>
+	</div>
+	<br>
+	<div>
+	</div>
+</div>
+
+<div id="10" class="tabcontent">
+	<br>
+	<iframe src="https://www.xindingdianxsw.com/844/844551/index.html" width=100% height=95%></iframe>
+</div>
+
+<div id="11" class="tabcontent">
+	<h2>Music Player</h2>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- CSS style -->
+  <style>
+    .player {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    <!--.track-art {
+      margin: 25px;
+      height: 100px;
+      width: 100px;
+      background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+      background-size: cover;
+      border-radius: 15%;
+    }-->
+
+    .now-playing {
+      font-size: 1rem;
+    }
+
+    .track-name {
+      font-size: 3rem;
+    }
+
+    .track-artist {
+      font-size: 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .playpause-track,
+    .prev-track,
+    .next-track,
+	.loop1,
+	.loop2 {
+      padding: 25px;
+      opacity: 0.8;
+
+      /* Smoothly transition the opacity */
+      transition: opacity .2s;
+    }
+
+    .playpause-track:hover,
+    .prev-track:hover,
+    .next-track:hover,
+	.loop1:hover,
+	.loop2:hover {
+      opacity: 1.0;
+    }
+
+    .slider_container {
+      width: 75%;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modify the appearance of the slider */
+    .seek_slider,
+    .volume_slider {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: black;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    /* Modify the appearance of the slider thumb */
+    .seek_slider::-webkit-slider-thumb,
+    .volume_slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: white;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .seek_slider:hover,
+    .volume_slider:hover {
+      opacity: 1.0;
+    }
+
+    .seek_slider {
+      width: 60%;
+    }
+
+    .volume_slider {
+      width: 30%;
+    }
+
+    .current-time,
+    .total-duration {
+      padding: 10px;
+    }
+
+    i.fa-volume-down,
+    i.fa-volume-up {
+      padding: 10px;
+    }
+
+    i.fa-play-circle,
+    i.fa-pause-circle,
+    i.fa-step-forward,
+    i.fa-step-backward,
+	i.fa-repeat,
+	i.fa-check {
+      cursor: pointer;
+    }
+  </style>
+  <div class="player">
+    <div class="details">
+      <div class="now-playing">PLAYING x OF y</div>
+      <!--<div class="track-art"></div>-->
+      <div class="track-name">Track Name</div>
+      <div class="track-artist">Track Artist</div>
+    </div>
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+    </div>
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+    <div class="slider_container">
+	  <div class="loop1" onclick="looptrack()"><i class="fa fa-repeat fa-1x"></i></div>
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+	  <div class="loop2" onclick="looptrack()"><i class="fa fa-repeat fa-1x"></i></div>
+    </div>
+
+  </div>
+
+  <!-- Main script for the player -->
+  <script>
+    let now_playing = document.querySelector(".now-playing");
+    // let track_art = document.querySelector(".track-art");
+    let track_name = document.querySelector(".track-name");
+    let track_artist = document.querySelector(".track-artist");
+
+    let playpause_btn = document.querySelector(".playpause-track");
+    let next_btn = document.querySelector(".next-track");
+    let prev_btn = document.querySelector(".prev-track");
+
+    let seek_slider = document.querySelector(".seek_slider");
+    let volume_slider = document.querySelector(".volume_slider");
+	let repeat_btn1 = document.querySelector(".loop1");
+	let repeat_btn2 = document.querySelector(".loop2");
+    let curr_time = document.querySelector(".current-time");
+    let total_duration = document.querySelector(".total-duration");
+
+    let track_index = 0;
+    let isPlaying = false;
+	let isLooping = false;
+    let updateTimer;
+
+    // Create new audio element
+    let curr_track = document.createElement('audio');
+	
+	curr_track.volume = 0.05;
+    volume_slider.value = curr_track.volume;
+	
+    // Define the tracks that have to be played
+    let track_list = [
+      {
+        name: "再不再見",
+        artist: "C AllStar",
+        //image: "https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        path: "./music/再不再見.mp3"
+      },
+      {
+        name: "某種老朋友",
+        artist: "林家謙",
+        //image: "https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        path: "./music/某種老朋友.mp3"
+      },
+    ];
+
+    function loadTrack(track_index) {
+      clearInterval(updateTimer);
+      resetValues();
+
+      // Load a new track
+      curr_track.src = track_list[track_index].path;
+      curr_track.load();
+
+      // Update details of the track
+      // track_art.style.backgroundImage = "url(" + track_list[track_index].image + ")";
+      track_name.textContent = track_list[track_index].name;
+      track_artist.textContent = track_list[track_index].artist;
+      now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+
+      // Set an interval of 1000 milliseconds for updating the seek slider
+      updateTimer = setInterval(seekUpdate, 1000);
+
+      // Move to the next track if the current one finishes playing
+      curr_track.addEventListener("ended", nextTrack);
+
+      // Apply a random background color
+      // random_bg_color();
+    }
+	/*
+    function random_bg_color() {
+
+      // Get a random number between 64 to 256 (for getting lighter colors)
+      let red = Math.floor(Math.random() * 256) + 64;
+      let green = Math.floor(Math.random() * 256) + 64;
+      let blue = Math.floor(Math.random() * 256) + 64;
+
+      // Construct a color withe the given values
+      let bgColor = "rgb(" + red + "," + green + "," + blue + ")";
+
+      // Set the background to that color
+      document.body.style.background = bgColor;
+    }*/
+
+    // Reset Values
+    function resetValues() {
+      curr_time.textContent = "00:00";
+      total_duration.textContent = "00:00";
+      seek_slider.value = 0;
+    }
+
+    function playpauseTrack() {
+      if (!isPlaying) playTrack();
+      else pauseTrack();
+    }
+
+	function looptrack() {
+	  if (!isLooping) enableLoop();
+	  else disableLoop();
+	}
+
+    function playTrack() {
+      curr_track.play();
+      isPlaying = true;
+
+      // Replace icon with the pause icon
+      playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    }
+
+    function pauseTrack() {
+      curr_track.pause();
+      isPlaying = false;
+
+      // Replace icon with the play icon
+      playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    }
+	
+	function enableLoop() { 
+	  curr_track.loop = true;
+	  isLooping = true;
+	  
+	  repeat_btn1.innerHTML = '<i class="fa fa-check fa-1x"></i>';
+	  repeat_btn2.innerHTML = '<i class="fa fa-check fa-1x"></i>';
+	} 
+
+	function disableLoop() { 
+	  curr_track.loop = false;
+	  isLooping = false;
+	  
+	  repeat_btn1.innerHTML = '<i class="fa fa-repeat fa-1x"></i>';
+	  repeat_btn2.innerHTML = '<i class="fa fa-repeat fa-1x"></i>';
+	}
+
+    function nextTrack() {
+      if (track_index < track_list.length - 1)
+        track_index += 1;
+      else track_index = 0;
+      loadTrack(track_index);
+      playTrack();
+    }
+
+    function prevTrack() {
+      if (track_index > 0)
+        track_index -= 1;
+      else track_index = track_list.length;
+      loadTrack(track_index);
+      playTrack();
+    }
+
+    function seekTo() {
+      seekto = curr_track.duration * (seek_slider.value / 100);
+      curr_track.currentTime = seekto;
+    }
+
+    function setVolume() {
+      curr_track.volume = volume_slider.value / 100;
+    }
+
+    function seekUpdate() {
+      let seekPosition = 0;
+
+      // Check if the current track duration is a legible number
+      if (!isNaN(curr_track.duration)) {
+        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        seek_slider.value = seekPosition;
+
+        // Calculate the time left and the total duration
+        let currentMinutes = Math.floor(curr_track.currentTime / 60);
+        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+        let durationMinutes = Math.floor(curr_track.duration / 60);
+        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+        // Adding a zero to the single digit time values
+        if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+        if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+        if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+        if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+        total_duration.textContent = durationMinutes + ":" + durationSeconds;
+      }
+    }
+	
+    // Load the first track in the tracklist
+    loadTrack(track_index);
+  </script>
+</div>
+
+<div id="12" class="tabcontent">
+	<h2>Countdown</h2>
+	<p style="text-align: center; font-size: 60px; margin-top: 0px;" id="countdown"></p>
+	<br>
+	<div id="targettime"></div>
+	<div>
+	</div>
+	<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get today's date and time
+	  var now = new Date().getTime();
+		
+	  // Find the distance between now and the count down date
+	  var distance = countDownDate - now;
+		
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+	  // Output the result in an element with id="demo"
+	  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+	  + minutes + "m " + seconds + "s ";
+	  
+	  document.getElementById("targettime").innerHTML = "Target time: Jan 5, 2024 15:37:25";
+	  
+	  // If the count down is over, write some text 
+	  if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("countdown").innerHTML = "Time's up!";
+	  }
+	}, 1000);
+	</script>
+	
+	
+</div>
+
+<div id="13" class="tabcontent">
+	<h2>Video</h2>
+</div>
+
+<div id="14" class="tabcontent">
+<h2>Currency</h2>
+<div><!-- Please do not edit this code - https://xeconvert.com/currency-converter-widget starts here --><iframe src="https://xeconvert.com/widget1?from=hkd&to=usd&lang=&theme=green&font=14" width="100%" height="300" frameborder="0" scrolling="no"></iframe><div style="font-size:14px;font-family:arial;text-align:right;"><a target="_blank" href="https://xeconvert.com/" style="text-decoration:none;color:#999;">Currency converter</a></div><!-- https://xeconvert.com/currency-converter-widget ends here --></div></div>
+
+<div  id="15" class="tabcontent">
+<div>
+  <iframe src="https://outlook.office365.com/owa/calendar/c9fa49a578464cdaa6c44e65a2fe85f2@link.cuhk.edu.hk/893e421a351540588b23092d2207d4b33958251419115189330/calendar.html" width="100%" height=555 frameborder="0"></iframe></div>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+</body>
+</html> 
