@@ -26,6 +26,12 @@ body, html {
   height: 100%;
   overflow: auto;
   white-space: nowrap;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tab::-webkit-scrollbar {
+  display: none;
 }
 
 /* Style the buttons inside the tab */
@@ -67,6 +73,12 @@ body, html {
   height: 100%;
   background-color: #333;
   color: #f2f2f2;
+  background-image: url('https://i.imgur.com/B0fMXm3.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 <!--.dropbtn {
@@ -132,6 +144,20 @@ a:active {
   background-color: transparent;
   text-decoration: none;
 }
+
+.asslist {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.asslist::-webkit-scrollbar {
+  display: none;
+}
+
+.tabcontent::-webkit-scrollbar {
+  display: none;
+}
+
 
 </style>
 </head>
@@ -213,7 +239,7 @@ a:active {
   
   <h2><div id="date"></div></h2>
   <canvas id="canvas" width="300" height="300"
-	style="background-color:#333">
+	style="background-color:transparent">
   </canvas>
 
 <script>
@@ -303,7 +329,7 @@ function drawHand(ctx, pos, length, width) {
 	
   </td><td></td><td></td>
   <td style="vertical-align:top; align:center">
-  <div style="overflow-y:auto;height:535px;width:535px">
+  <div class="asslist" style="overflow-y:auto;height:535px;width:535px">
   <h3 align=center>Assignment List</h3>
 <table border="1" cellpadding="5px" align="center">
 <thead>
